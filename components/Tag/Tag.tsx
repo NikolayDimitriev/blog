@@ -12,7 +12,7 @@ export const Tag = ({
   ...props
 }: TagProps) => {
   return (
-    <p
+    <div
       className={cn(styles.tag, className, {
         [styles.s]: size === "s",
         [styles.m]: size === "m",
@@ -25,6 +25,6 @@ export const Tag = ({
       {...props}
     >
       {href ? <a href={href}>{children}</a> : <>{children}</>}
-    </p>
+    </div>
   );
 };
