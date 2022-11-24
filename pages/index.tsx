@@ -1,10 +1,11 @@
-import { Htag, Button, Paragraph, Tag, Rating } from "../components";
 import { useState } from "react";
+import { Htag, Button, Paragraph, Tag, Rating } from "../components";
+import { withLayout } from "../layout/Layout";
 
-export default function Home() {
+function Home() {
   const [rating, setRating] = useState<number>(0);
   return (
-    <div>
+    <>
       <Htag tag="h1">Test</Htag>
       <Button appearance="primary">Узнать подробнее</Button>
       <Button appearance="ghost" arrow="right">
@@ -25,6 +26,8 @@ export default function Home() {
         Primary href
       </Tag>
       <Rating isEditable rating={rating} setRating={setRating} />
-    </div>
+    </>
   );
 }
+
+export default withLayout(Home);
